@@ -76,25 +76,54 @@ const students = [
     }
 ];
 
-const getPercentage = (scoreObt, totalMarks) => ((scoreObt/totalMarks)*100);
+const getPercentage = (scoreObt, totalMarks) =>((scoreObt/totalMarks)*100);
 
-for(let student of students){
-    student.percentage = getPercentage(student.scoreObt, 500);
-    console.log(student);
-
-    if(student.percentage >= 80){
-        student.division = "Distinction";
-    }else if(student.percentage >= 60){
-        student.division = "First Division";
-    }else if(student.percentage >= 45){
-        student.division = "Second Division";
-    }else if(student.percentage >= 32){
-        student.division = "Third Division";
+ const getDivision = (percentage)=> {
+    if(percentage >= 80){
+        return "Distinction";
+    }else if(percentage >= 60){
+        return "First Division";
+    }else if(percentage >= 45){
+        return "Second Division";
+    }else if(percentage >= 32){
+        return "Third Division";
     }else{
-        student.division = "Fail";
+        return "Fail";
     }
 }
-console.log(students);
+
+const printStd = (studentProfile) =>{
+    console.log("Name: ", studentProfile.name);
+    console.log("Score Obtained: ", studentProfile.scoreObt);
+    console.log(`Percentage: ${studentProfile.percentage}%`);
+    console.log(`Division: ${studentProfile.division}`);
+    console.log("--------------------------------");
+}
+
+for(let std of students){
+    std.percentage = getPercentage(std.scoreObt, 500);
+    std.division = getDivision(std.percentage);
+    printStd(std);
+}
+
+// for(let student of students){
+//     student.percentage = getPercentage(student.scoreObt, 500);
+//     console.log(student);
+
+//     if(student.percentage >= 80){
+//         student.division = "Distinction";
+//     }else if(student.percentage >= 60){
+//         student.division = "First Division";
+//     }else if(student.percentage >= 45){
+//         student.division = "Second Division";
+//     }else if(student.percentage >= 32){
+//         student.division = "Third Division";
+//     }else{
+//         student.division = "Fail";
+//     }
+// }
+// console.table(students);
+
 
 
 
