@@ -100,11 +100,44 @@ let allUsers = [
 
 
 // Using forEach
-let usersFromKtm = [];
-allUsers.forEach(user => {
-    if (user.address === "Kathmandu") {
-        usersFromKtm.push(user);
-    }
-});
-console.log(usersFromKtm);
+// let usersFromKtm = [];
+// allUsers.forEach(user => {
+//     if (user.address === "Kathmandu") {
+//         usersFromKtm.push(user);
+//     }
+// });
+// console.log(usersFromKtm);
  
+
+// const usersFromKtm =  allUsers.map((user) =>{
+//   if(user.address === 'Kathmandu'){
+//     usersFromKtm.push(user)
+//   }
+// })
+// console.log(usersFromKtm)
+
+/** 
+//filter() considers only boolean true values
+const usersFromKtm = allUsers.filter((user) => (user.address === 'Kathmandu'))
+console.log(usersFromKtm)
+
+*/
+
+/**
+
+//reduce()
+const nums = [3,6,3,8,7]
+
+// let max =  null;
+let max =  nums.reduce((acc, cur) => (acc>cur) ? acc:cur)
+// for (let i =0 ; i < nums.length; i++){
+//   if (nums[i]> max){
+//     max = nums[i]
+//   }
+// }
+
+
+console.log(max)
+ */
+
+const nums = [3,6,3,8,7]
